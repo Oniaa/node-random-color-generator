@@ -1,11 +1,14 @@
+// Imported nmp
 import chalk from 'chalk';
 import randomColor from 'randomcolor';
 
+// var thats generates random colors
 const generatedColor = randomColor();
-const inputColorLuminosity = process.argv[2];
-const inputColor = process.argv[3];
+// var
+const inputHue = process.argv[2];
+const inputColorLuminosity = process.argv[3];
 
-if (!inputColorLuminosity && !inputColor) {
+if (!inputColorLuminosity && !inputHue) {
   console.log(
     chalk.hex(generatedColor)(`      ###############################
       ###############################
@@ -16,5 +19,21 @@ if (!inputColorLuminosity && !inputColor) {
       ###############################
       ###############################
       ###############################`),
+  );
+} else if (inputHue || inputColorLuminosity) {
+  const inputColor = randomColor({
+    luminosity: inputColorLuminosity,
+    hue: inputHue,
+  });
+  console.log(
+    chalk.hex(inputColor)(`  ###############################
+  ###############################
+  ###############################
+  ######                   ######
+  ######      ${inputColor}      ######
+  ######                   ######
+  ###############################
+  ###############################
+  ###############################`),
   );
 }
