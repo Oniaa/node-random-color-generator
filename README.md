@@ -1,7 +1,33 @@
 # Node.js Random Color Generator
 
-Generate random colors on the command line
+Generate a colored block with # characters on the command line
+
+## Random colored block
 
 ```bash
-TODO: add an output for the program
+$ node index.js
+  ###############################
+  ###############################
+  ###############################
+  ######                   ######
+  ######      #abedf4      ######
+  ######                   ######
+  ###############################
+  ###############################
+  ###############################
+```
+
+## Colored block by hue and Luminosity
+
+```bash
+$ node index.js dark green
+  ###############################
+  ###############################
+  ###############################
+  ######                   ######
+  ######      #0fa844      ######
+  ######                   ######
+  ###############################
+  ###############################
+  ###############################
 ```
